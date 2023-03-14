@@ -22,7 +22,7 @@ const char* ssid = "TP-LINK_BF4C";
 const char* password = "1020304050";
 String serverUrl = "192.168.0.252";
 String payload;
-String device_key = "some_magic_word_4";
+String device_key = "some_magic_word_3";
 
 ESP8266WebServer server(80);
 
@@ -83,30 +83,30 @@ void handleDevice() {
     if (command == "0") {
       Serial.println("Reklama_gec");
       irsend.sendNEC(0x7070F00F, 32);
-      delay(1200);
+      delay(600);
       irsend.sendNEC(0x7070C23D, 32);
-      delay(1000);
+      delay(600);
       irsend.sendNEC(0x7070C23D, 32);
-      delay(1000);
+      delay(600);
       irsend.sendNEC(0x7070629D, 32);
-      delay(2000);
+      delay(1500);
       irsend.sendNEC(0x7070629D, 32);
-      delay(2000);
+      delay(1500);
       irsend.sendNEC(0x7070629D, 32);
-      delay(2000);
+      delay(1500);
       irsend.sendNEC(0x7070C23D, 32);
-      delay(1000);
+      delay(600);
       irsend.sendNEC(0x7070926D, 32);
       server.send(200, "text/plain", "Reklama");
     }
     if (command == "1") {
       Serial.println("Oyuna_gec");
       irsend.sendNEC(0x7070F00F, 32);
-      delay(1000);
+      delay(600);
       irsend.sendNEC(0x707042BD, 32);
-      delay(1000);
+      delay(600);
       irsend.sendNEC(0x707042BD, 32);
-      delay(1000);
+      delay(600);
       irsend.sendNEC(0x7070629D, 32);
       server.send(200, "text/plain", "Reklama_gecdi");
     }

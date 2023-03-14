@@ -83,38 +83,38 @@ void handleDevice() {
     if (command == "0") {
       Serial.println("Reklama_gec");
       irsend.sendNEC(0xE0E0807F, 32);
-      delay(2000);
-      irsend.sendNEC(0xE0E08679, 32);
       delay(1000);
       irsend.sendNEC(0xE0E08679, 32);
-      delay(1000);
+      delay(800);
       irsend.sendNEC(0xE0E08679, 32);
-      delay(1000);
+      delay(800);
+      //      irsend.sendNEC(0xE0E08679, 32);
+      //      delay(1000);
       irsend.sendNEC(0xE0E016E9, 32);
       delay(3000);
       irsend.sendNEC(0xE0E046B9, 32);
-      delay(1000);
+      delay(800);
       irsend.sendNEC(0xE0E046B9, 32);
-      delay(1000);
+      delay(800);
       irsend.sendNEC(0xE0E016E9, 32);
-      delay(3000);
+      delay(1500);
       irsend.sendNEC(0xE0E016E9, 32);
-      delay(3000);
+      delay(1500);
       irsend.sendNEC(0xE0E046B9, 32);
-      delay(1000);
+      delay(800);
       irsend.sendNEC(0xE0E016E9, 32);
       server.send(200, "text/plain", "Oyuna_gecdi");
     }
     if (command == "1") {
       Serial.println("Oyuna_gec");
       irsend.sendNEC(0xE0E0807F, 32);
-      delay(1000);
+      delay(800);
       irsend.sendNEC(0xE0E006F9, 32);
-      delay(1000);
+      delay(800);
       irsend.sendNEC(0xE0E006F9, 32);
-      delay(1000);
-      irsend.sendNEC(0xE0E006F9, 32);
-      delay(1000);
+      delay(800);
+      //      irsend.sendNEC(0xE0E006F9, 32);
+      //      delay(1000);
       irsend.sendNEC(0xE0E016E9, 32);
       server.send(200, "text/plain", "Reklama_gecdi");
     }
